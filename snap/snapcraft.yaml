@@ -1,0 +1,31 @@
+name: cryptofetch
+version: '1.0.0'
+summary: Like neofetch but for cryptocurrencies.
+description: Like neofetch but for cryptocurrencies.
+
+grade: stable
+confinement: strict
+base: core18
+
+apps:
+  cryptofetch:
+    command: cryptofetch
+
+parts:
+  cryptofetch:
+    plugin: cmake
+    source: https://github.com/sdmg15/cryptofetch
+    source-type: git
+    source-depth: 1
+    build-snaps: [cmake/latest/edge] # We need cmake >= 3.11
+    override-build: |
+      /snap/bin/cmake \
+        -DCMAKE_INSTALL_PREFIX=$SNAPCRAFT_PART_INSTALL/usr/local \
+        -DCMAKE_BUILD_TYPE=Release \
+        $SNAPCRAFT_PART_SRC
+      make -j 4
+      make install
+
+passthrough:
+  title: cryptofetch
+  license: MIT
