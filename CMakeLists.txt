@@ -1,6 +1,6 @@
 cmake_minimum_required (VERSION 3.24)
 
-project(ftxui-starter
+project(cryptofetch
   LANGUAGES CXX
   VERSION 1.0.0
 )
@@ -26,10 +26,10 @@ FetchContent_Declare(ftxui
 FetchContent_MakeAvailable(ftxui)
 # ------------------------------------------------------------------------------
 
-add_executable(ftxui-starter src/main.cpp)
-target_include_directories(ftxui-starter PRIVATE src)
+add_executable(cryptofetch src/main.cpp)
+target_include_directories(cryptofetch PRIVATE src)
 
-target_link_libraries(ftxui-starter
+target_link_libraries(cryptofetch
   PRIVATE ftxui::screen
   PRIVATE ftxui::dom
   PRIVATE ftxui::component  # Not needed for this example.
