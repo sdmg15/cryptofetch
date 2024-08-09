@@ -91,8 +91,11 @@ static auto bitcoin_details() {
 }
 
 
-using CoinDetails = std::pair<std::function<Element(void)>, std::function<Element(void)>>;
+using Logo = std::function<Element(void)>;
+using Details = std::function<Element(void)>;
+using LogoColor = Color; 
+using CoinDetails = std::tuple<Logo, Details, LogoColor>;
 
-std::map<std::string, CoinDetails> coins{
-  std::make_pair("bitcoin", std::make_pair(&bitcoin, &bitcoin_details))
+const std::map<std::string, CoinDetails> coins{
+  std::make_pair("bitcoin", std::make_tuple(&bitcoin, &bitcoin_details, Color::Gold3Bis))
  };
