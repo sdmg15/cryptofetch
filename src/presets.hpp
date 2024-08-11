@@ -90,6 +90,88 @@ static auto bitcoin_details() {
     return table.Render();
 }
 
+static auto ethereum() {
+    return vbox({
+
+                    hbox({text(L"                            +================+                              ")}),
+                    hbox({text(L"                        *============================*                        ")}),
+                    hbox({text(L"                    *====================================*                    ")}),
+                    hbox({text(L"                  ==========================================*                 ")}),
+                    hbox({text(L"               *=======================::=====================*               ")}),
+                    hbox({text(L"             +========================: ::======================+             ")}),
+                    hbox({text(L"           *=========================.  :::=======================*           ")}),
+                    hbox({text(L"          ==========================.   ::::========================          ")}),
+                    hbox({text(L"        *==========================     :::::-=======================*        ")}),
+                    hbox({text(L"       *==========================      ::::::-=======================*       ")}),
+                    hbox({text(L"      *=========================-       ::::::::=======================*      ")}),
+                    hbox({text(L"     *=========================-        :::::::::=======================*     ")}),
+                    hbox({text(L"     ++=======================:         ::::::::::=====================++     ")}),
+                    hbox({text(L"    +=+======================:          :::::::::::====================+=+    ")}),
+                    hbox({text(L"   *++======================.           ::::::::::::====================++*   ")}),
+                    hbox({text(L"   +++==================+=+.            :::::::::::::=+===============+=+++   ")}),
+                    hbox({text(L"  @+++=+=++++=+=+=+=+=+=+=          ::::====::::::::::-+++=+=+=+=+=+=+==+++@  ")}),
+                    hbox({text(L"  *++++=+===+=++=+=+=+++=       ::::::::========-::::::-+=+=+=+=+=+=+=+++++*  ")}),
+                    hbox({text(L"  *++++++++++++++++++++-   .::::::::::::============-::::+++++++++++++=++++*  ")}),
+                    hbox({text(L"  *+++++++++++++++++++-.::::::::::::::::================-:=+++++++++++++++++  ")}),
+                    hbox({text(L"  *++++++++++++++++++++=::::::::::::::::=================++++++++++++++++++*  ")}),
+                    hbox({text(L"  *+++++++++++++++++++++++=:::::::::::::==============+++++++++++++++++++++*  ")}),
+                    hbox({text(L"  %+++++++++++++++++++= =+++++::::::::::===========+++++-=+++++++++++++++++%  ")}),
+                    hbox({text(L"  @*++++++++++++++++++++.  =+++*+-::::::=======++++++-::=+++++++++++++++++*@  ")}),
+                    hbox({text(L"   #*+++++++++++++++++++*-    -+++*+=:::====+*++++:::::+++++++++++++++++***   ")}),
+                    hbox({text(L"   %**+++++++++++++++++++*+      :=+*+*==+*+++=::::::=+++++++++++++++++*+*%   ")}),
+                    hbox({text(L"    %**+++++++++++++++++++**:       :=+*+*+=::::::::=*++++++++++++++++***%    ")}),
+                    hbox({text(L"    @***+*++*++++++++++++++**-         .=::::::::::**+*+*++++++++++++****@    ")}),
+                    hbox({text(L"     @***+*++*+*+*+*+*+*+*+*+*=         :::::::::=**+*+*+*+*+*+*+*+*****@     ")}),
+                    hbox({text(L"      @*************+***********:       ::::::::+******+*+*+***********@      ")}),
+                    hbox({text(L"       @*****+*+*+****+*+*+******=      ::::::-*****+********+*+*+****@       ")}),
+                    hbox({text(L"        @%************************+.    :::::=**********************%@        ")}),
+                    hbox({text(L"          @*************************:   ::::+**********************@@         ")}),
+                    hbox({text(L"           @@************************=  ::-**********************%@           ")}),
+                    hbox({text(L"             @%***********************+ :=*********************%@             ")}),
+                    hbox({text(L"               @%********************************************%@               ")}),
+                    hbox({text(L"                 @@%**************************************%@@                 ")}),
+                    hbox({text(L"                    @@%#******************************#%@@                    ")}),
+                    hbox({text(L"                       @@@@%#********************#%@@@@                       ")}),
+                    hbox({text(L"                            @@@@@@@%%%%%%%%@@@@@@@                            ")}),
+                                                                                                
+    });
+
+}
+
+static auto eth_details() {
+        auto table =  Table({
+        {text(""),                                                  text("")},
+        {text(""),                                                  text("")},
+        {text(""),                                                  text("")},
+        {text(""),                                                  text("")},
+        {text(""),                                                  text("")},
+        {text(""),                                                  text("")},
+        {text("Name") | color(Color::BlueLight),                     text("          Ethereum")},
+        {text(""),                                                  text("")},
+        {text("Symbol") | color(Color::BlueLight),                   text("          ETH")},
+        {text(""),                                                  text("")},
+        {text("Max Supply") | color(Color::BlueLight),               text("          N/A")},
+        {text(""),                                                  text("")},
+        {text("Creation") | color(Color::BlueLight),                 text("          2014")},
+        {text(""),                                                  text("")},
+        {text("Consensus Algorithm") | color(Color::BlueLight),      text("          Proof Of Stake (PoS)")},
+        {text(""),                                                  text("")},
+        {text("Creator") | color(Color::BlueLight),                  text("          Vitalik Buterin")},
+        {text(""),                                                  text("")},
+        {text("Whitepaper") | color(Color::BlueLight),               text("          https://ethereum.org/en/whitepaper/")},
+        {text(""),                                                  text("")},
+        {text("Explorer") | color(Color::BlueLight),                 text("          https://etherscan.com")},
+        {text(""),                                                  text("")},
+        {text("Source") | color(Color::BlueLight),                   text("          https://github.com/ethereum/go-ethereum")},
+        {text(""),                                                  text("")},
+        {text("Block Reward") | color(Color::BlueLight),             text("          Sum of Transaction fees")},
+        {text(""),                                                  text("")},
+        {text("Genesis Block") | color(Color::BlueLight),            text("          https://etherscan.io/block/0")}
+    });
+
+    table.SelectColumns(0, -1).Decorate(bold);
+    return table.Render();   
+}
 
 using Logo = std::function<Element(void)>;
 using Details = std::function<Element(void)>;
@@ -97,5 +179,6 @@ using LogoColor = Color;
 using CoinDetails = std::tuple<Logo, Details, LogoColor>;
 
 const std::map<std::string, CoinDetails> coins{
-  std::make_pair("bitcoin", std::make_tuple(&bitcoin, &bitcoin_details, Color::Gold3Bis))
+  std::make_pair("bitcoin", std::make_tuple(&bitcoin, &bitcoin_details, Color::Gold3Bis)),
+  std::make_pair("ethereum", std::make_tuple(&ethereum, &eth_details, Color::BlueLight))
  };

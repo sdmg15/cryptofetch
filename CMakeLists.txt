@@ -32,7 +32,7 @@ target_include_directories(cryptofetch PRIVATE src)
 target_link_libraries(cryptofetch
   PRIVATE ftxui::screen
   PRIVATE ftxui::dom
-  PRIVATE ftxui::component  # Not needed for this example.
+  PRIVATE ftxui::component
 )
 
 if (EMSCRIPTEN)

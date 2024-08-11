@@ -17,7 +17,7 @@ static auto screen(const std::optional<CoinDetails> inputCoin) {
     if (inputCoin.has_value()) {
         auto logo_box = [&] {
         auto content = vbox({
-          std::get<0>(inputCoin.value())() | color(std::get<2>(inputCoin.value()))
+          std::get<0>(inputCoin.value())() | bold | color(std::get<2>(inputCoin.value()))
         });
         return content;
       };
